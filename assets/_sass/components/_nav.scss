@@ -1,0 +1,39 @@
+.page-nav {
+  float: right;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  right: 0;
+  z-index: 900;
+}
+
+.page-nav__item {
+  display: block;
+  float: left;
+  margin: 0;
+
+  &.active {
+    border-bottom: 4px solid $orange;
+  }
+}
+
+.page-nav__link {
+  color: $slate;
+  font-weight: bold;
+  padding: 1rem;
+}
+
+
+// FullPage navigitation dots
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span {
+  background: $orange;
+}
+
+#fp-nav ul li a.active span,
+.fp-slidesNav ul li a.active span,
+#fp-nav ul li:hover a.active span,
+.fp-slidesNav ul li:hover a.active span {
+
+}

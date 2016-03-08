@@ -1,0 +1,24 @@
+.three-points {
+  .headline {
+    display: none;
+  }
+}
+
+@include media($large-screen-up) {
+  .three-points {
+    @include clearfix();
+    padding: 3rem 0;
+
+    .headline {
+      display: block;
+      text-align: center;
+      font-size: 6rem;
+    }
+
+    li {
+      @include span-columns(4);
+      display: block;
+      font-size: 2.0rem;
+    }
+  }
+}

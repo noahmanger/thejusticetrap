@@ -1,0 +1,33 @@
+.section {
+  padding: 0;
+  position: relative;
+}
+
+.section__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.section__content {
+  @include outer-container();
+  padding: 2rem 4.5rem 2rem 2rem;
+  position: relative;
+  z-index: 100;
+}
+
+.section-1 {
+  background-image: url('/assets/img/hero.png');
+  background-size: cover;
+  background-position: center center;
+}
+
+.section-2 {
+  background: $slate;
+  color: #fff;
+}
+
+.section-3 {
+}
