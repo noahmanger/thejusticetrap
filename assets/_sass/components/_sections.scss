@@ -3,31 +3,34 @@
   position: relative;
 }
 
-.section__background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
 .section__content {
   @include outer-container();
-  padding: 2rem 4.5rem 2rem 2rem;
+  padding: 2rem;
   position: relative;
   z-index: 100;
 }
 
-.section-1 {
-  background-image: url('/assets/img/hero.png');
-  background-size: cover;
-  background-position: center center;
-}
+// Section 2
+.section-2,
+.section-3 {
+  border-bottom: 1rem solid $black;
+  padding: 2rem 0;
 
-.section-2 {
-  background: $slate;
-  color: #fff;
+  @include media($large-screen-up) {
+    padding: 4rem 0;
+  }
 }
 
 .section-3 {
+  background-color: #E3E0DA;
+}
+
+.section-5 {
+  background-color: #E7E8E9;
+  padding: 2rem;
+}
+
+.section-6 {
+  background-color: $black;
+  color: $white;
 }

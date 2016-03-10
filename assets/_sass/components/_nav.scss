@@ -1,5 +1,7 @@
 .page-nav {
+  display: none;
   float: right;
+  font-size: 1.6rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -19,21 +21,30 @@
 }
 
 .page-nav__link {
-  color: $slate;
-  font-weight: bold;
+  @include transition(all .2s);
+  color: $black;
   padding: 1rem;
+
+  &:hover {
+    color: $red;
+  }
 }
 
+.page-nav__link--join {
+  border: 1px solid $black;
+  border-radius: 5rem;
+  padding: 1rem 2rem;
 
-// FullPage navigitation dots
-#fp-nav ul li a span,
-.fp-slidesNav ul li a span {
-  background: $orange;
+  &:hover,
+  &:active {
+    background-color: $red;
+    border-color: $red;
+    color: $white;
+  }
 }
 
-#fp-nav ul li a.active span,
-.fp-slidesNav ul li a.active span,
-#fp-nav ul li:hover a.active span,
-.fp-slidesNav ul li:hover a.active span {
-
+@include media($medium-screen-up) {
+  .page-nav {
+    display: block;
+  }
 }

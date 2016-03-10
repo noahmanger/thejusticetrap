@@ -1,16 +1,16 @@
 // Typography
-$base-font-family: 'Open Sans', arial, sans-serif;
+$base-font-family: 'Roboto', arial, sans-serif;
 $heading-font-family: $base-font-family;
 
 // Font Sizes
-$base-font-size: 1.6rem;
+$base-font-size: 1.4rem;
 
 // Line height
 $base-line-height: 1.5;
 $heading-line-height: 1.2;
 
 // Other Sizes
-$base-border-radius: 3px;
+$base-border-radius: 0;
 $base-spacing: $base-line-height * 1em;
 $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
@@ -19,11 +19,13 @@ $base-z-index: 0;
 $blue: #1565c0;
 $dark-gray: #333;
 $medium-gray: #999;
-$light-gray: #ddd;
-$yellow: #FBAF3F;
-$orange: #F05A28;
-$purple: #9E1E62;
-$slate: #221F20;
+$light-gray: #a7a9ac;
+$yellow: #fbb040;
+$orange: #f15a29;
+$purple: #9e1f63;
+$black: #000000;
+$white: #fff;
+$red: #be202e;
 
 // Font Colors
 $base-font-color: $dark-gray;

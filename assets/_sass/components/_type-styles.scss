@@ -1,15 +1,17 @@
 .headline {
+  color: $black;
   display: block;
   font-size: 3.2rem;
   font-weight: bold;
-  line-height: 1.5;
-  width: 80%;
+  line-height: 1;
   white-space: pre-line;
 }
 
-.headline--inverse {
-  color: #fff;
-  padding: .5rem 1rem;
+.headline__highlight {
+  color: $white;
+  display: inline-block;
+  line-height: .6;
+  padding: .5rem 2rem;
 }
 
 // .headline__chunk {
@@ -37,6 +39,16 @@
   color: #fff;
 }
 
+.t-black--inverse {
+  background-color: $black;
+  color: #fff;
+}
+
+.t-red--inverse {
+  background-color: $red;
+  color: #fff;
+}
+
 .t-orange {
   color: $orange;
 }
@@ -60,6 +72,6 @@
 
 @include media($large-screen-up) {
   .headline {
-    font-size: 4.8rem;
+    font-size: 4.2rem;
   }
 }

@@ -1,19 +1,12 @@
 $(document).ready(function() {
-    $('#fullpage').fullpage({
-      anchors: ['section-1', 'section-2', 'section-3', 'section-4'],
-      // autoScrolling: false,
-      menu: '#menu',
-      navigation: true,
-      scrollBar: true,
-      slidesNavigation: true,
-      controlArrows: true,
-      paddingTop: '7rem',
-      // verticalCentered: false
-    });
 
-    $('.js-background-video').each(function(){
+    $('.js-video-background').each(function(){
       new VideoBackground($(this));
     })
+
+    new Tabs('.js-cycle');
+    new Tabs
+
 });
 
 var BREAKPOINTS = {
@@ -25,16 +18,16 @@ function getScreenSize() {
   var width = $(window).width();
   if (width <= BREAKPOINTS['mobile']) {
     return 'mobile';
-  }
+  };
 
   if (BREAKPOINTS['mobile'] < width && width <= BREAKPOINTS['tablet']) {
     return 'tablet';
-  }
+  };
 
   if (BREAKPOINTS['tablet'] < width) {
     return 'desktop';
-  }
-}
+  };
+};
 
 var VideoBackground = function($selector) {
   this.$body = $selector;
@@ -44,8 +37,8 @@ var VideoBackground = function($selector) {
 
   if (screenSize === 'desktop') {
     this.createVideo();
-  }
-}
+  };
+};
 
 VideoBackground.prototype.createVideo = function() {
   var video =
@@ -56,4 +49,37 @@ VideoBackground.prototype.createVideo = function() {
   + '</video>';
 
   this.$body.append(video)
-}
+};
+
+var Tabs = function(selector) {
+  this.$body = $(selector);
+  this.currentTab = 1;
+  this.$body.on('click', '.cycle__button', this.handleClick.bind(this));
+
+};
+
+Tabs.prototype.handleClick = function(e) {
+  var tabNumber = $(e.target).data('tab');
+
+  this.hideTab(this.currentTab);
+  this.showTab(tabNumber);
+};
+
+Tabs.prototype.showTab = function(tabNumber) {
+  var $button = $('.cycle__button[data-tab="' + tabNumber +'"]');
+  var $stage = $('#stage-' + tabNumber);
+  var $content = $('#content-stage-' + tabNumber);
+  $stage.attr('aria-hidden', false);
+  $content.attr('aria-hidden', false);
+  $button.addClass('active');
+  this.currentTab = tabNumber;
+};
+
+Tabs.prototype.hideTab = function(tabNumber) {
+  var $button = $('.cycle__button[data-tab="' + tabNumber +'"]');
+  var $stage = $('#stage-' + tabNumber);
+  var $content = $('#content-stage-' + tabNumber);
+  $stage.attr('aria-hidden', true);
+  $content.attr('aria-hidden', true);
+  $button.removeClass('active');
+};

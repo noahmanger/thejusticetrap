@@ -1,0 +1,79 @@
+.cycle {
+  @include clearfix();
+}
+
+.cycle__nav {
+  @include clearfix();
+  font-size: 1.6rem;
+  padding: 1rem 0;
+}
+
+.cycle__nav-item {
+  float: left;
+  margin-right: 2px;
+}
+
+.cycle__content {
+  p[aria-hidden="true"] {
+    display: none;
+  }
+}
+
+.cycle__button {
+  @include transition(all .2s);
+  background: none;
+  border: 1px solid transparent;
+  color: $light-gray;
+  padding: 1rem;
+  font-weight: normal;
+
+  &.active,
+  &:active,
+  &:hover {
+    border-color: $orange;
+    background: none;
+    color: $black;
+  }
+
+  &:focus {
+    background: none;
+    color: $black;
+  }
+
+  &:hover {
+    background: none;
+    color: $black;
+  }
+}
+
+.cycle__graphic {
+  position: relative;
+  height: 30rem;
+}
+
+.cycle__stage {
+  @include transition(opacity .4s);
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 1;
+
+  &[aria-hidden="true"] {
+    opacity: 0;
+  }
+}
+
+@include media($large-screen-up) {
+  .cycle {
+    min-height: 400px;
+  }
+
+  .cycle__controls {
+    @include span-columns(6);
+    padding-top: 4rem;
+  }
+
+  .cycle__graphic {
+    @include span-columns(6);
+  }
+}
