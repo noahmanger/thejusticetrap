@@ -1,5 +1,4 @@
 .page-nav {
-  display: none;
   float: right;
   font-size: 1.6rem;
   list-style: none;
@@ -22,8 +21,9 @@
 
 .page-nav__link {
   @include transition(all .2s);
+  display: none;
   color: $black;
-  padding: 1rem;
+  padding: .5rem 1rem;
 
   &:hover {
     color: $red;
@@ -31,9 +31,12 @@
 }
 
 .page-nav__link--join {
+  display: block;
   border: 1px solid $black;
   border-radius: 5rem;
-  padding: 1rem 2rem;
+  padding: .5rem 1rem;
+  font-size: 1.3rem;
+  line-height: 1;
 
   &:hover,
   &:active {
@@ -44,7 +47,13 @@
 }
 
 @include media($medium-screen-up) {
-  .page-nav {
+  .page-nav__link {
     display: block;
+  }
+
+  .page-nav__link--join {
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    line-height: auto;
   }
 }

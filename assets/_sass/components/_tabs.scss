@@ -1,4 +1,4 @@
-[aria-hidden="true"] {
+[data-tab][aria-hidden="true"] {
   display: none !important;
 }
 
@@ -15,7 +15,7 @@
 
 .video-tabs__panel {
   position: relative;
-  height: 24rem;
+  height: 23rem;
   left: 0;
   right: 0;
   width: 100%;
@@ -28,7 +28,7 @@
 .video-tabs__container {
   @include outer-container();
   position: relative;
-  height: 24rem;
+  height: 23rem;
   padding: 0 2rem;
 }
 
@@ -70,6 +70,23 @@
 .video-trigger {
   background: $black;
   border-radius: 20rem;
+  position: relative;
+  padding-right: 4rem;
+  display: block;
+
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: $red;
+  }
+
+  &:after {
+    @include triangle(.8rem 1rem, $white, right);
+    content: '';
+    position: absolute;
+    right: 1.5rem;
+    top: 1.2rem;
+  }
 }
 
 .video-tab__button {

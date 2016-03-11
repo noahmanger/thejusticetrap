@@ -71,6 +71,10 @@
 }
 
 @include media($large-screen-up) {
+  .text-column {
+    @include span-columns(6);
+  }
+  
   .headline {
     font-size: 4.2rem;
   }

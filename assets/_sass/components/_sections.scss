@@ -28,7 +28,12 @@
 
 .section-5 {
   background-color: #E7E8E9;
-  padding: 2rem;
+  padding: 2rem 0;
+
+  .headline {
+    border-top: 1px solid $medium-gray;
+    padding-top: 2rem;
+  }
 }
 
 .section-6 {

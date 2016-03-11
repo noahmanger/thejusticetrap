@@ -1,0 +1,109 @@
+.issues {
+  background: url('/assets/img/cycle-issues.svg') no-repeat;
+  background-position: -10rem -10rem;
+  background-size: 40rem;
+
+  @include media($large-screen-up) {
+    background-size: 80rem;
+  }
+}
+
+.issues__details {
+  position: relative;
+  margin-top: 20rem;
+  border: 2px solid $red;
+  padding: 2rem;
+
+  &:after {
+    @include triangle(3.6rem, $white, up);
+    content: '';
+    position: absolute;
+    top: -1.8rem;
+    right: 4.2rem;
+  }
+
+  &:before {
+    @include triangle(4rem, $red, up);
+    content: '';
+    position: absolute;
+    top: -2rem;
+    right: 4rem;
+  }
+
+  @include media($large-screen-up) {
+    @include span-columns(6);
+    @include shift(6);
+    margin-top: 0;
+
+    &:after {
+      @include triangle(3.6rem, $white, left);
+      content: '';
+      position: absolute;
+      top: calc(50% + 2px);
+      left: -3.6rem;
+    }
+
+    &:before {
+      @include triangle(4rem, $red, left);
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -4rem;
+    }
+  }
+}
+
+.issue {
+  @include clearfix();
+  padding-bottom: 2rem;
+}
+
+.img--outline {
+  border: 1px solid $light-gray;
+}
+
+.issue__label {
+  font-weight: normal;
+  color: $light-gray;
+}
+
+.issue__half {
+  width: 48%;
+  margin: 0 1%;
+  float: left;
+}
+
+.big-number {
+  font-weight: bold;
+  display: block;
+  font-size: 4rem;
+  line-height: 1;
+}
+
+.big-number__label {
+  font-size: 1.2rem;
+  line-height: 1.4;
+  display: block;
+}
+
+.action {
+  padding-top: 2rem;
+
+  .headline {
+    width: 80%;
+  }
+
+  @include media($large-screen-up) {
+    padding-top: 4rem;
+  }
+}
+
+.cycle-action {
+  display: block;
+  margin: 0 auto;
+  max-width: 20rem;
+  
+  @include media($large-screen-up) {
+    max-width: 50rem;
+  }
+}

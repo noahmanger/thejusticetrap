@@ -7,6 +7,27 @@ $(document).ready(function() {
   $('.js-tabs').each(function(){
     new Tabs($(this));
   });
+
+  // $('.section').each(function(index, section){
+  //   var sectionWatcher = scrollMonitor.create(section)
+  //   sectionWatcher.stateChange(function(){
+  //     if (section.isInViewport) {
+  //       console.log($(this).attr('id'));
+  //     }
+  //   })
+  // })
+
+  // var controller = new ScrollMagic.Controller();
+  //
+  // // Scene Handler
+  // var scene = new ScrollMagic.Scene({
+  //   triggerElement: "#section-1", // point of execution
+  // });
+  //
+  // controller.addScene([
+  //   scene,
+  //   scene2
+  // ]);
 });
 
 var BREAKPOINTS = {

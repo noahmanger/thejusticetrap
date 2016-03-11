@@ -4,7 +4,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 1.5rem;
+  padding: 1rem;
   z-index: 900;
 }
 
@@ -17,9 +17,15 @@
   float: left;
   font-weight: bold;
   font-size: 1.6rem;
-  padding-left: 5rem;
+  padding-left: 4rem;
 
   &:hover {
     color: $red;
+  }
+
+  @include media($large-screen-up) {
+    padding-left: 5rem;
+    padding-top: .5rem;
+    height: 3.4rem;
   }
 }
