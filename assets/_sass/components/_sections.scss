@@ -11,8 +11,7 @@
 }
 
 // Section 2
-.section-2,
-.section-3 {
+.section-2 {
   border-bottom: 1rem solid $black;
   padding: 2rem 0;
 
@@ -22,7 +21,9 @@
 }
 
 .section-3 {
-  background-color: #E3E0DA;
+  border-bottom: 1rem solid $black;
+  overflow: hidden;
+  position: relative;
 }
 
 .section-5 {

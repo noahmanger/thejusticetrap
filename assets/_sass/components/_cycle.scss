@@ -2,17 +2,6 @@
   @include clearfix();
 }
 
-.cycle__nav {
-  @include clearfix();
-  font-size: 1.6rem;
-  padding: 1rem 0;
-}
-
-.cycle__nav-item {
-  float: left;
-  margin-right: 2px;
-}
-
 .cycle__content {
   p[aria-hidden="true"] {
     display: none;

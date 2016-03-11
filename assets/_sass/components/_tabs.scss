@@ -1,0 +1,101 @@
+[aria-hidden="true"] {
+  display: none !important;
+}
+
+.tab-nav {
+  @include clearfix();
+  font-size: 1.6rem;
+  padding: 1rem 0;
+}
+
+.tab-nav__item {
+  float: left;
+  margin-right: 2px;
+}
+
+.video-tabs__panel {
+  position: relative;
+  height: 24rem;
+  left: 0;
+  right: 0;
+  width: 100%;
+
+  @include media($medium-screen-up) {
+    height: 50rem;
+  }
+}
+
+.video-tabs__container {
+  @include outer-container();
+  position: relative;
+  height: 24rem;
+  padding: 0 2rem;
+}
+
+.video-tabs__panel-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  img {
+    width: 100%;
+  }
+}
+
+.video-tabs__controls {
+  background-color: #E3E0DA;
+  z-index: 200;
+
+  @include media($medium-screen-up) {
+    background-color: rgba(#E3E0DA, .8);
+    position: relative;
+    bottom: 0;
+  }
+}
+
+.video-tabs__headline {
+  position: absolute;
+  left: 2rem;
+  bottom: 1rem;
+}
+
+.video-tabs__content {
+  position: relative;
+  height: 200px;
+  width: 80%;
+  padding: 2rem 0;
+}
+
+.video-trigger {
+  background: $black;
+  border-radius: 20rem;
+}
+
+.video-tab__button {
+  @include transition(all .2s);
+  background: none;
+  border: 1px solid $light-gray;
+  color: #333;
+  padding: .8rem;
+  font-weight: normal;
+
+  &.active,
+  &:active,
+  &:hover {
+    border-color: $red;
+    background: $red;
+    color: $white;
+    font-weight: bold;
+  }
+
+  &:focus {
+    background: none;
+    color: $black;
+  }
+
+  &:hover {
+    background: $red;
+    color: $white;
+  }
+}
