@@ -8,26 +8,53 @@ $(document).ready(function() {
     new Tabs($(this));
   });
 
-  // $('.section').each(function(index, section){
-  //   var sectionWatcher = scrollMonitor.create(section)
-  //   sectionWatcher.stateChange(function(){
-  //     if (section.isInViewport) {
-  //       console.log($(this).attr('id'));
-  //     }
-  //   })
-  // })
 
-  // var controller = new ScrollMagic.Controller();
-  //
-  // // Scene Handler
-  // var scene = new ScrollMagic.Scene({
-  //   triggerElement: "#section-1", // point of execution
-  // });
-  //
-  // controller.addScene([
-  //   scene,
-  //   scene2
-  // ]);
+  var controller = new ScrollMagic.Controller();
+  var sceneIDs = ['#introduction', '#the-problem', '#the-solution', '#the-need', '#join-us'];
+  var scenes = [];
+  var headerHeight = $('.site-header').outerHeight();
+  
+  // Scene Handler
+  var sceneFactory = function(id) {
+    var height = $(id).outerHeight();
+
+    var scene = new ScrollMagic.Scene({
+      triggerElement: id,
+      // offset: headerHeight,
+      duration: height,
+      triggerHook: 0
+    });
+
+    scene.$link = $('.site-header a[href="'+ id +'"]');
+
+    scene.on('enter', function(e) {
+      e.target.$link.addClass('active');
+      // window.history.pushState(id);
+    });
+
+    scene.on('leave', function(e) {
+      e.target.$link.removeClass('active');
+    });
+
+    return scene;
+  }
+
+  sceneIDs.forEach(function(id) {
+    var scene = sceneFactory(id);
+    scenes.push(scene);
+  });
+
+  // Animate scroll
+  $('.page-nav__link').on('click', function(e){
+    e.preventDefault();
+    $target = $(e.target);
+    var sectionTop = $($target.attr('href')).offset().top + 2;
+    $('html, body').animate({
+      scrollTop: sectionTop + 'px'
+    })
+  });
+
+  controller.addScene(scenes);
 });
 
 var BREAKPOINTS = {

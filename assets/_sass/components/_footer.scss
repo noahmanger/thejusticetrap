@@ -1,7 +1,15 @@
-.site-footer {
+.footer {
   background-color: $black;
   color: $white;
   border-top: 1px solid $white;
+}
+
+.contributor__name {
+  display: table-cell;
+  height: 5rem;
+  margin-top: 2rem;
+  vertical-align: bottom;
+  margin-bottom: 1rem;
 }
 
 @include media($large-screen-up) {
@@ -10,9 +18,7 @@
   }
 
   .contributor__name {
-    display: table-cell;
     height: 5rem;
     vertical-align: middle;
-    margin-bottom: 1rem;
   }
 }

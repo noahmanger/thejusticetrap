@@ -28,6 +28,11 @@
   &:hover {
     color: $red;
   }
+
+  &.active {
+    background: $red;
+    color: $white;
+  }
 }
 
 .page-nav__link--join {
