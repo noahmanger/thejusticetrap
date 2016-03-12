@@ -8,6 +8,10 @@
   padding: 2rem;
   position: relative;
   z-index: 100;
+
+  @include media($large-screen-up) {
+    padding: 2rem 0;
+  }
 }
 
 // Section 2

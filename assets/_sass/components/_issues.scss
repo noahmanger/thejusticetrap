@@ -86,24 +86,76 @@
   display: block;
 }
 
+// Actions
 .action {
+  position: relative;
   padding-top: 2rem;
 
   .headline {
-    width: 80%;
+    width: 100%;
   }
 
   @include media($large-screen-up) {
     padding-top: 4rem;
+
+    .headline {
+      width: 80%;
+    }
   }
+}
+
+.action__item {
+  @include span-columns(6);
+  max-width: 25rem;
+}
+
+.action__top {
+  @include clearfix();
+}
+
+.action__bottom {
+  @include clearfix();
 }
 
 .cycle-action {
   display: block;
   margin: 0 auto;
   max-width: 20rem;
-  
+
   @include media($large-screen-up) {
     max-width: 50rem;
+  }
+}
+
+.action__1 {
+
+}
+
+.action__2 {
+  float: right;
+}
+
+.action__3 {
+
+}
+
+.action__4 {
+  float: right;
+}
+
+@include media($large-screen-up) {
+  .action__graphic {
+    position: relative;
+    top: -5rem;
+  }
+
+  .action__top {
+    position: relative;
+    top: 5rem;
+  }
+
+  .action__bottom {
+    position: relative;
+    top: -5rem;
   }
 }
