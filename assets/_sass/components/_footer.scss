@@ -1,0 +1,18 @@
+.site-footer {
+  background-color: $black;
+  color: $white;
+  border-top: 1px solid $white;
+}
+
+@include media($large-screen-up) {
+  .contributor {
+    @include span-columns(3);
+  }
+
+  .contributor__name {
+    display: table-cell;
+    height: 5rem;
+    vertical-align: middle;
+    margin-bottom: 1rem;
+  }
+}

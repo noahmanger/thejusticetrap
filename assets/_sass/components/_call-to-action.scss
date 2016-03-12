@@ -12,6 +12,10 @@
   }
 }
 
+.cta__intro {
+  padding: 3rem 0;
+}
+
 .cta__forms {
   @include clearfix();
   padding: 2rem 0;
@@ -38,5 +42,22 @@
 
   @include media($large-screen-up) {
     padding-top: 0;
+  }
+}
+
+.cta__social {
+  h3 {
+    float: left;
+    padding: .8rem 0;
+  }
+
+  .social-icons {
+    float: left;
+  }
+
+  .icon__item {
+    float: left;
+    width: 4rem;
+    margin-left: 1rem;
   }
 }
