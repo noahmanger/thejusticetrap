@@ -1,0 +1,55 @@
+.connector {
+  position: relative;
+  width: 100%;
+
+  .seg {
+    border-style: dashed;
+    border-color: $light-gray;
+    position: absolute;
+  }
+
+  .seg--up {
+    border-right: 3px;
+    width: 3px;
+  }
+
+  .seg--horizontal {
+    border-bottom: 3px;
+  }
+}
+
+.connector--1 {
+  .seg--1 {
+    height: 5rem;
+    right: 50%;
+    top: 0;
+  }
+
+  .seg--2,
+  .seg--3 {
+    display: none;
+  }
+}
+
+@include media($large-screen-up) {
+  .connector--1 {
+    .seg--1 {
+      right: 20%;
+      height: 3rem;
+    }
+
+    .seg--2 {
+      display: block;
+      width: 60%;
+      top: 3rem;
+      left: 20%;
+    }
+
+    .seg--3 {
+      display: block;
+      top: 3.3rem;
+      left: 20%;
+      height: 3rem;
+    }
+  }
+}

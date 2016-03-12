@@ -3,6 +3,10 @@
   background-position: -10rem -10rem;
   background-size: 40rem;
 
+  .section__content {
+    padding-bottom: 1rem;
+  }
+
   @include media($large-screen-up) {
     background-size: 80rem;
   }
@@ -10,7 +14,7 @@
 
 .issues__details {
   position: relative;
-  margin-top: 20rem;
+  margin-top: 24rem;
   border: 2px solid $red;
   padding: 2rem;
 
@@ -89,15 +93,12 @@
 // Actions
 .action {
   position: relative;
-  padding-top: 2rem;
 
   .headline {
     width: 100%;
   }
 
   @include media($large-screen-up) {
-    padding-top: 4rem;
-
     .headline {
       width: 80%;
     }
