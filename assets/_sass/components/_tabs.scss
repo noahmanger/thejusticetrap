@@ -29,7 +29,7 @@
   @include media($large-screen-up) {
     overflow: visible;
     position: static;
-    padding-top: 30%;
+    padding-top: 35%;
   }
 }
 
@@ -39,7 +39,7 @@
   padding: 0 2rem;
 
   @include media($large-screen-up) {
-    margin-top: -30%;
+    margin-top: -35%;
     width: 100%;
   }
 }
@@ -88,12 +88,6 @@
   position: relative;
   width: 80%;
   padding: 2rem 0 1rem 0;
-}
-
-.video-tabs__blurb {
-  @include media($medium-screen-up) {
-    @include span-columns(8);
-  }
 }
 
 .video-trigger {
@@ -160,4 +154,34 @@
 
 .cycle--targeted-processed {
   background: url('../img/cycle-icon-targeted-processed.svg') no-repeat;
+}
+
+@include media($large-screen-up) {
+  .video-tabs__content {
+    @include span-columns(8);
+    padding: 0;
+  }
+
+  .video-tabs__nav {
+    @include span-columns(3);
+    @include shift(1);
+    @include omega();
+    float: right;
+    padding: 0;
+
+    .tab-nav__item {
+      display: block;
+      float: none;
+      width: 100%;
+      margin-bottom: 1rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+  }
 }
