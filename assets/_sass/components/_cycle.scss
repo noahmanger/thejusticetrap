@@ -19,7 +19,6 @@
   &.active,
   &:active,
   &:hover {
-    border-color: $orange;
     background: none;
     color: $black;
   }
@@ -33,23 +32,48 @@
     background: none;
     color: $black;
   }
+
+  &[data-controls-tab="1"] {
+    &.active,
+    &:active,
+    &:hover {
+      border-color: $orange;
+    }
+  }
+
+  &[data-controls-tab="2"] {
+    &.active,
+    &:active,
+    &:hover {
+      border-color: $yellow;
+    }
+  }
+
+  &[data-controls-tab="3"] {
+    &.active,
+    &:active,
+    &:hover {
+      border-color: $purple;
+    }
+  }
+
+  &[data-controls-tab="4"] {
+    &.active,
+    &:active,
+    &:hover {
+      border-color: $red;
+    }
+  }
 }
 
 .cycle__graphic {
   position: relative;
-  height: 30rem;
 }
 
 .cycle__stage {
   @include transition(opacity .4s);
-  position: absolute;
   top: 0;
   right: 0;
-  opacity: 1;
-
-  &[aria-hidden="true"] {
-    opacity: 0;
-  }
 }
 
 @include media($large-screen-up) {

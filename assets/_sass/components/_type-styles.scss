@@ -76,18 +76,21 @@ h3 {
 
 .t-caption {
   display: block;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   line-height: 1.4;
   color: $medium-gray;
 }
 
 @include media($medium-screen-up) {
-
+  .t-caption {
+    font-size: 1.4rem;
+  }
 }
 
 @include media($large-screen-up) {
   .text-column {
     @include span-columns(6);
+    padding-bottom: 4rem;
   }
 
   .headline {

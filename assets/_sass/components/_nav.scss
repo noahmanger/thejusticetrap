@@ -14,7 +14,7 @@
   float: left;
   margin: 0;
   margin-left: 4px;
-  
+
   &.active {
     border-bottom: 4px solid $orange;
   }
@@ -31,7 +31,7 @@
   }
 
   &.active {
-    background: $red;
+    background: $black;
     color: $white;
   }
 }

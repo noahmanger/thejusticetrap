@@ -1,6 +1,6 @@
 .issues {
   background: url('/assets/img/cycle-issues.svg') no-repeat;
-  background-position: -10rem -10rem;
+  background-position: -4rem -10rem;
   background-size: 40rem;
 
   .section__content {
@@ -8,7 +8,7 @@
   }
 
   @include media($large-screen-up) {
-    background-size: 80rem;
+    background-size: 75rem;
   }
 }
 
@@ -43,7 +43,7 @@
       @include triangle(3.6rem, $white, left);
       content: '';
       position: absolute;
-      top: calc(50% + 2px);
+      top: calc(36% + 2px);
       left: -3.6rem;
     }
 
@@ -51,7 +51,7 @@
       @include triangle(4rem, $red, left);
       content: '';
       position: absolute;
-      top: 50%;
+      top: 36%;
       left: -4rem;
     }
   }
@@ -60,6 +60,10 @@
 .issue {
   @include clearfix();
   padding-bottom: 2rem;
+
+  @include media($large-screen-up) {
+    padding: 0 3rem 2rem 3rem;
+  }
 }
 
 .img--outline {
@@ -105,6 +109,10 @@
   }
 }
 
+.action__label {
+  font-size: 1.6rem;
+}
+
 .action__item {
   @include span-columns(6);
   max-width: 25rem;
@@ -112,10 +120,12 @@
 
 .action__top {
   @include clearfix();
+  position: relative;
 }
 
 .action__bottom {
   @include clearfix();
+  position: relative;
 }
 
 .cycle-action {

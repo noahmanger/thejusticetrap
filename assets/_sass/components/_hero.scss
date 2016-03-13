@@ -31,10 +31,11 @@
 @include media($large-screen-up) {
   .hero,
   .hero .section__content {
-    min-height: 70vh;
+    min-height: 90vh;
   }
 
   .hero__heading {
+    font-size: 5rem;
     bottom: 4rem;
     left: 0;
   }

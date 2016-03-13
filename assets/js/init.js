@@ -13,7 +13,7 @@ $(document).ready(function() {
   var sceneIDs = ['#introduction', '#the-problem', '#the-solution', '#the-need', '#join-us'];
   var scenes = [];
   var headerHeight = $('.site-header').outerHeight();
-  
+
   // Scene Handler
   var sceneFactory = function(id) {
     var height = $(id).outerHeight();
@@ -51,7 +51,7 @@ $(document).ready(function() {
     var sectionTop = $($target.attr('href')).offset().top + 2;
     $('html, body').animate({
       scrollTop: sectionTop + 'px'
-    })
+    }, 800)
   });
 
   controller.addScene(scenes);

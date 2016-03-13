@@ -31,6 +31,73 @@
   }
 }
 
+.connector--2,
+.connector--3,
+.connector--4,
+.connector--5 {
+  position: absolute;
+  width: 50%;
+}
+
+.connector--2 {
+  top: 16rem;
+
+  .seg--1 {
+    top: 0;
+    height: 2rem;
+    left: 10%;
+  }
+
+  .seg--2 {
+    width: 80%;
+    left: 10%;
+    top: 2rem;
+  }
+}
+
+.connector--3 {
+  right: 0;
+  top: 15rem;
+
+  .seg--1 {
+    right: 5%;
+    height: 6rem;
+  }
+
+  .seg--2 {
+    top: 6rem;
+    right: 5%;
+    width: 40%;
+  }
+}
+
+.connector--4 {
+  top: -10rem;
+
+  .seg--1 {
+    height: 8rem;
+  }
+
+  .seg--2 {
+    width: 35%
+  }
+}
+
+.connector--5 {
+  right: 0;
+  top: -4rem;
+
+  .seg--1 {
+    height: 6rem;
+    right: 5%;
+  }
+
+  .seg--2 {
+    right: 5%;
+    width: 60%
+  }
+}
+
 @include media($large-screen-up) {
   .connector--1 {
     .seg--1 {
@@ -50,6 +117,54 @@
       top: 3.3rem;
       left: 20%;
       height: 3rem;
+    }
+  }
+
+  .connector--2 {
+    top: 10rem;
+
+    .seg--1 {
+      right: 5%;
+      top: 2rem;
+      left: auto;
+    }
+
+    .seg--2 {
+      right: 5%;
+      left: auto;
+      width: 40%;
+    }
+  }
+
+  .connector--3 {
+    .seg--1 {
+
+    }
+
+    .seg--2 {
+
+    }
+  }
+
+  .connector--4 {
+    top: -17rem;
+
+    .seg--1 {
+      height: 15rem;
+    }
+
+    .seg--2 {
+      width: 45%;
+    }
+  }
+
+  .connector--5 {
+    .seg--1 {
+
+    }
+
+    .seg--2 {
+      width: 70%;
     }
   }
 }

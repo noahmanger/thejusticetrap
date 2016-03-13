@@ -4,8 +4,13 @@
 
 .tab-nav {
   @include clearfix();
-  font-size: 1.6rem;
   padding: 1rem 0;
+
+  @include media($large-screen-up) {
+    button {
+      font-size: 1.8rem;
+    }
+  }
 }
 
 .tab-nav__item {
@@ -30,6 +35,10 @@
   position: relative;
   height: 23rem;
   padding: 0 2rem;
+
+  @include media($medium-screen-up) {
+    height: 50rem;
+  }
 }
 
 .video-tabs__panel-bg {
@@ -58,13 +67,16 @@
   position: absolute;
   left: 2rem;
   bottom: 1rem;
+
+  @include media($medium-screen-up) {
+    top: 8rem;
+  }
 }
 
 .video-tabs__content {
   position: relative;
-  height: 200px;
   width: 80%;
-  padding: 2rem 0;
+  padding: 2rem 0 1rem 0;
 }
 
 .video-trigger {
@@ -104,7 +116,6 @@
     border-color: $red;
     background: $red;
     color: $white;
-    font-weight: bold;
   }
 
   &:focus {

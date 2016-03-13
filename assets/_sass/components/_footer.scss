@@ -2,23 +2,37 @@
   background-color: $black;
   color: $white;
   border-top: 1px solid $white;
+  padding: 4rem 0;
 }
 
 .contributor__name {
-  display: table-cell;
-  height: 5rem;
-  margin-top: 2rem;
-  vertical-align: bottom;
-  margin-bottom: 1rem;
+  display: block;
+  margin: 4rem 0 2rem 0;
+  width: 100%;
+
+  h3 {
+    margin: 0;
+  }
+
+  img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+  }
 }
 
-@include media($large-screen-up) {
+@include media($medium-screen-up) {
   .contributor {
     @include span-columns(3);
   }
 
   .contributor__name {
-    height: 5rem;
-    vertical-align: middle;
+    height: 10rem;
+    margin: 0 0 2rem 0;
+
+    h3 {
+      line-height: 2rem;
+      padding-top: 8rem;
+    }
   }
 }
