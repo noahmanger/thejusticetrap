@@ -14,22 +14,22 @@ $(document).ready(function() {
 var BREAKPOINTS = {
   'mobile': 600,
   'tablet': 768
-}
+};
 
 function getScreenSize() {
   var width = $(window).width();
-  if (width <= BREAKPOINTS['mobile']) {
+  if (width <= BREAKPOINTS.mobile) {
     return 'mobile';
-  };
+  }
 
-  if (BREAKPOINTS['mobile'] < width && width <= BREAKPOINTS['tablet']) {
+  if (BREAKPOINTS.mobile < width && width <= BREAKPOINTS.tablet) {
     return 'tablet';
-  };
+  }
 
-  if (BREAKPOINTS['tablet'] < width) {
+  if (BREAKPOINTS.tablet < width) {
     return 'desktop';
-  };
-};
+  }
+}
 
 var VideoBackground = function($selector) {
   this.$body = $selector;
@@ -39,18 +39,18 @@ var VideoBackground = function($selector) {
 
   if (screenSize === 'desktop') {
     this.createVideo();
-  };
+  }
 };
 
 VideoBackground.prototype.createVideo = function() {
   var video =
-  '<video class="video-background" width="100%" loop muted autoplay poster="' + this.src + '.jpg">'
-    + '<source src="' + this.src + '.mp4" type="video/mp4">'
-    + '<source src="' + this.src + '.webm" type="video/webm">'
-    + '<img src="' + this.src + '.jpg" alt="Photo of first screen of the video">'
-  + '</video>';
+  '<video class="video-background" width="100%" loop muted autoplay poster="' + this.src + '.jpg">' +
+    '<source src="' + this.src + '.mp4" type="video/mp4">' +
+    '<source src="' + this.src + '.webm" type="video/webm">' +
+    '<img src="' + this.src + '.jpg" alt="Photo of first screen of the video">' +
+  '</video>';
 
-  this.$body.append(video)
+  this.$body.append(video);
 };
 
 var Tabs = function($selector) {
