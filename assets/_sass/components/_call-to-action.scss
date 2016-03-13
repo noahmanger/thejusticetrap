@@ -8,21 +8,38 @@
   }
 
   @include media($large-screen-up) {
-    @include span-columns(6);
-  }
-}
+    @include span-columns(5);
 
-.cta__intro {
-  padding: 3rem 0;
+    &:nth-child(2) {
+      @include shift(2);
+    }
+  }
 }
 
 .cta__forms {
   @include clearfix();
   padding: 2rem 0;
+}
 
-  @include media($large-screen-up) {
-    padding: 4rem 0;
+.cta__row {
+  @include clearfix();
+  padding-bottom: 2rem;
+}
+
+.cta__non-button {
+  @include span-columns(8);
+}
+
+.cta__button {
+  @include span-columns(4);
+
+  button {
+    width: 100%;
   }
+}
+
+.cta__label {
+  font-size: 1.8rem;
 }
 
 .donate,
