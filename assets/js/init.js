@@ -8,53 +8,7 @@ $(document).ready(function() {
     new Tabs($(this));
   });
 
-
-  var controller = new ScrollMagic.Controller();
-  var sceneIDs = ['#introduction', '#the-problem', '#the-solution', '#the-need', '#join-us'];
-  var scenes = [];
-  var headerHeight = $('.site-header').outerHeight();
-
-  // Scene Handler
-  var sceneFactory = function(id) {
-    var height = $(id).outerHeight();
-
-    var scene = new ScrollMagic.Scene({
-      triggerElement: id,
-      // offset: headerHeight,
-      duration: height,
-      triggerHook: 0
-    });
-
-    scene.$link = $('.site-header a[href="'+ id +'"]');
-
-    scene.on('enter', function(e) {
-      e.target.$link.addClass('active');
-      // window.history.pushState(id);
-    });
-
-    scene.on('leave', function(e) {
-      e.target.$link.removeClass('active');
-    });
-
-    return scene;
-  }
-
-  sceneIDs.forEach(function(id) {
-    var scene = sceneFactory(id);
-    scenes.push(scene);
-  });
-
-  // Animate scroll
-  $('.page-nav__link').on('click', function(e){
-    e.preventDefault();
-    $target = $(e.target);
-    var sectionTop = $($target.attr('href')).offset().top + 2;
-    $('html, body').animate({
-      scrollTop: sectionTop + 'px'
-    }, 800)
-  });
-
-  controller.addScene(scenes);
+  initScrollTracking();
 });
 
 var BREAKPOINTS = {
@@ -93,7 +47,7 @@ VideoBackground.prototype.createVideo = function() {
   '<video class="video-background" width="100%" loop muted autoplay poster="' + this.src + '.png">'
     + '<source src="' + this.src + '.mp4" type="video/mp4">'
     + '<source src="' + this.src + '.webm" type="video/webm">'
-    + '<img src="' + this.src + '.png">'
+    + '<img src="' + this.src + '.jpg">'
   + '</video>';
 
   this.$body.append(video)
@@ -122,3 +76,53 @@ Tabs.prototype.hide = function(tabNumber) {
   this.$body.find('[data-controls-tab="' + tabNumber +'"]').removeClass('active');
   this.$body.find('[data-tab="' + tabNumber + '"]').attr('aria-hidden', true);
 };
+
+var initScrollTracking = function() {
+  var controller = new ScrollMagic.Controller();
+  var sceneIDs = ['#introduction', '#the-problem', '#the-solution', '#the-need', '#join-us'];
+  var scenes = [];
+  var headerHeight = $('.site-header').outerHeight();
+
+  // Scene Handler
+  var sceneFactory = function(id) {
+    var height = $(id).outerHeight();
+
+    var scene = new ScrollMagic.Scene({
+      triggerElement: id,
+      duration: height,
+      triggerHook: .3
+    });
+
+    scene.setClassToggle(id, 'visible');
+
+    scene.$link = $('.site-header a[href="'+ id +'"]');
+
+    scene.on('enter', function(e) {
+      e.target.$link.addClass('active');
+      window.history.pushState(null, null, id);
+    });
+
+    scene.on('leave', function(e) {
+      e.target.$link.removeClass('active');
+    });
+
+    return scene;
+  }
+
+  sceneIDs.forEach(function(id) {
+    var scene = sceneFactory(id);
+    scenes.push(scene);
+  });
+
+  // Animate scroll
+  $('.page-nav__link').on('click', function(e){
+    e.preventDefault();
+    $target = $(e.target);
+    var sectionTop = $($target.attr('href')).offset().top + 2;
+    $('html, body').animate({
+      scrollTop: sectionTop + 'px'
+    }, 800)
+  });
+
+  controller.addScene(scenes);
+}
