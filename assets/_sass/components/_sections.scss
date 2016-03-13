@@ -9,7 +9,7 @@
   position: relative;
   z-index: 100;
 
-  @include media($large-screen-up) {
+  @include media($xl-screen-up) {
     padding: 2rem 0;
   }
 }

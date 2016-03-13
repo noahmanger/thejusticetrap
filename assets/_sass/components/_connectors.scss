@@ -1,6 +1,7 @@
 .connector {
   position: relative;
   width: 100%;
+  z-index: -1;
 
   .seg {
     border-style: dashed;
@@ -98,7 +99,7 @@
   }
 }
 
-@include media($large-screen-up) {
+@include media($medium-screen-up) {
   .connector--1 {
     .seg--1 {
       right: 20%;
@@ -126,6 +127,50 @@
     .seg--1 {
       right: 5%;
       top: 2rem;
+      height: 4rem;
+      left: auto;
+    }
+
+    .seg--2 {
+      right: 5%;
+      left: auto;
+      width: 25%;
+    }
+  }
+
+  .connector--3 {
+    .seg--2 {
+      width: 65%;
+    }
+  }
+
+  .connector--4 {
+    top: -10rem;
+    left: 5%;
+
+    .seg--1 {
+      height: 8rem;
+    }
+
+    .seg--2 {
+      width: 60%;
+    }
+  }
+
+  .connector--5 {
+    .seg--2 {
+      width: 70%;
+    }
+  }
+}
+
+@include media($large-screen-up) {
+  .connector--2 {
+    top: 10rem;
+
+    .seg--1 {
+      right: 5%;
+      top: 2rem;
       left: auto;
     }
 
@@ -137,12 +182,8 @@
   }
 
   .connector--3 {
-    .seg--1 {
-
-    }
-
     .seg--2 {
-
+      width: 50%;
     }
   }
 

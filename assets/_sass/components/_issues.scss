@@ -7,12 +7,18 @@
     padding-bottom: 1rem;
   }
 
+  @include media($medium-screen-up) {
+    background-size: 50%;
+    background-position: -4rem 10%;
+  }
+
   @include media($large-screen-up) {
-    background-size: 75rem;
+    background-position: -4rem -10rem;
   }
 }
 
 .issues__details {
+  background: $white;
   position: relative;
   margin-top: 24rem;
   border: 2px solid $red;
@@ -34,7 +40,7 @@
     right: 4rem;
   }
 
-  @include media($large-screen-up) {
+  @include media($medium-screen-up) {
     @include span-columns(6);
     @include shift(6);
     margin-top: 0;
@@ -138,16 +144,13 @@
   }
 }
 
-.action__1 {
-
-}
-
 .action__2 {
   float: right;
-}
 
-.action__3 {
-
+  @include media($medium-screen-up) {
+    position: relative;
+    top: -2rem;
+  }
 }
 
 .action__4 {
