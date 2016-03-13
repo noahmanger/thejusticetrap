@@ -44,10 +44,10 @@ var VideoBackground = function($selector) {
 
 VideoBackground.prototype.createVideo = function() {
   var video =
-  '<video class="video-background" width="100%" loop muted autoplay poster="' + this.src + '.png">'
+  '<video class="video-background" width="100%" loop muted autoplay poster="' + this.src + '.jpg">'
     + '<source src="' + this.src + '.mp4" type="video/mp4">'
     + '<source src="' + this.src + '.webm" type="video/webm">'
-    + '<img src="' + this.src + '.jpg">'
+    + '<img src="' + this.src + '.jpg" alt="Photo of first screen of the video">'
   + '</video>';
 
   this.$body.append(video)

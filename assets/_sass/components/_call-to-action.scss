@@ -45,12 +45,12 @@
 .donate,
 .submit {
   display: inline-block;
-  background-color: $orange;
+  background-color: $red;
 
   &:focus,
   &:active,
   &:hover {
-    background-color: $orange;
+    background-color: $red;
   }
 }
 
