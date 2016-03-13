@@ -28,6 +28,10 @@
   }
 }
 
+.video-background {
+  display: none;
+}
+
 @include media($large-screen-up) {
   .hero,
   .hero .section__content {
@@ -42,6 +46,15 @@
     left: 0;
   }
 
+  .video-background {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+  }
+  
   .lead {
     padding: 4rem 0;
 
