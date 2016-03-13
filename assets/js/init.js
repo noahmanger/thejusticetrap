@@ -115,7 +115,7 @@ var initScrollTracking = function() {
   });
 
   // Animate scroll
-  $('.page-nav__link').on('click', function(e){
+  $('.js-scroll-link').on('click', function(e){
     e.preventDefault();
     $target = $(e.target);
     var sectionTop = $($target.attr('href')).offset().top + 2;
