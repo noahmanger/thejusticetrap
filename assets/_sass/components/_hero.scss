@@ -59,9 +59,9 @@
     padding: 4rem 0;
 
     p {
-      @include span-columns(8);
-      @include shift(2);
-      font-size: 2.4rem;
+      @include span-columns(10);
+      @include shift(1);
+      font-size: 3.8rem;
     }
   }
 }
