@@ -1,19 +1,20 @@
 .issues {
   background: url('../img/cycle-issues.svg') no-repeat;
-  background-position: -4rem -10rem;
+  background-position: -4rem 0;
   background-size: 40rem;
 
   .section__content {
     padding-bottom: 1rem;
   }
 
-  @include media($medium-screen-up) {
-    background-size: 50%;
-    background-position: -4rem 10%;
-  }
-
+  
   @include media($large-screen-up) {
     background-position: -4rem -10rem;
+  }
+  
+  @include media($medium-screen-up) {
+    background-size: 50%;
+    background-position: -4rem 20%;
   }
 }
 
