@@ -79,7 +79,7 @@ Tabs.prototype.hide = function(tabNumber) {
 
 var initScrollTracking = function() {
   var controller = new ScrollMagic.Controller();
-  var sceneIDs = ['#introduction', '#the-problem', '#the-solution', '#the-need', '#join-us'];
+  var sceneIDs = ['#introduction', '#the-problem', '#the-stories', '#the-method', '#the-action', '#the-project', '#join-us'];
   var scenes = [];
   var headerHeight = $('.site-header').outerHeight();
 
