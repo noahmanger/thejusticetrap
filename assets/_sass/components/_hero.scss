@@ -35,9 +35,8 @@
 @include media($large-screen-up) {
   .hero,
   .hero .section__content {
-    padding-top: 25%;
+    padding-top: 23%;
     min-height: 0;
-    // min-height: 90vh;
   }
 
   .hero__heading {
@@ -54,9 +53,9 @@
     display: block;
     width: 100%;
   }
-  
+
   .lead {
-    padding: 4rem 0;
+    padding: 2rem 0;
 
     p {
       @include span-columns(10);
