@@ -55,6 +55,7 @@ VideoBackground.prototype.createVideo = function() {
 
 var Tabs = function($selector) {
   this.$body = $selector;
+  this.nextButtons = this.$body.find('.js-tab--next').length > 0;
   this.currentTab = 1;
   this.$body.on('click', '[data-controls-tab]', this.handleClick.bind(this));
 
@@ -64,11 +65,24 @@ Tabs.prototype.handleClick = function(e) {
   var tabNumber = $(e.target).data('controls-tab');
   this.hide(this.currentTab);
   this.show(tabNumber);
+  this.$body.attr('data-scene', tabNumber);
 };
 
 Tabs.prototype.show = function(tabNumber) {
-  this.$body.find('[data-controls-tab="' + tabNumber +'"]').addClass('active');
-  this.$body.find('[data-tab="' + tabNumber + '"]').attr('aria-hidden', false);
+  var thisTab = this.$body.find('[data-tab="' + tabNumber + '"]');
+  thisTab.attr('aria-hidden', false);
+  this.$body.find('[data-controls-tab="' + tabNumber + '"]').addClass('active');
+
+  // Focus on the next button the shown tab if it exists
+  if (this.nextButtons) {
+    var nextTab = tabNumber + 1;
+    if ( thisTab.find('.js-tab--end').length > 0) {
+      thisTab.find('.js-tab--end').focus();
+    } else {
+      this.$body.find('.js-tab--next[data-controls-tab="' + nextTab +'"]').focus();
+    }
+  }
+
   this.currentTab = tabNumber;
 };
 
@@ -107,7 +121,7 @@ var initScrollTracking = function() {
     });
 
     return scene;
-  }
+  };
 
   sceneIDs.forEach(function(id) {
     var scene = sceneFactory(id);
@@ -121,8 +135,8 @@ var initScrollTracking = function() {
     var sectionTop = $($target.attr('href')).offset().top + 2;
     $('html, body').animate({
       scrollTop: sectionTop + 'px'
-    }, 800)
+    }, 800);
   });
 
   controller.addScene(scenes);
-}
+};

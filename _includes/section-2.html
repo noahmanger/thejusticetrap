@@ -1,33 +1,50 @@
 <div class="section__content">
   <h2><span class="headline">The <span class="headline__highlight t-red--inverse">Justice Trap</span> will use interactive design to organize, simplify and connect the policies driving our complex justice system.</span></h2>
-  <div class="cycle js-tabs">
+  <div class="cycle js-tabs" data-scene="1">
     <div class="cycle__controls">
-      <ul class="cycle__nav tab-nav">
-        <li class="tab-nav__item"><button type="button" data-controls-tab="1" class="cycle__button active">Targeted</button></li>
-        <li class="tab-nav__item"><button type="button" data-controls-tab="2" class="cycle__button">Processed</button></li>
-        <li class="tab-nav__item"><button type="button" data-controls-tab="3" class="cycle__button">Punished</button></li>
-        <li class="tab-nav__item"><button type="button" data-controls-tab="4" class="cycle__button">Trapped</button></li>
-      </ul>
       <div class="cycle__content">
-        <p data-tab="1" aria-hidden="false">Too many people are arrested for too many crimes, and they’re disproportionately the poor and people of color.</p>
-        <p data-tab="2"  aria-hidden="true">Once in the system, various forces lead overwhelmingly to convictions and excessive punishments.</p>
-        <p data-tab="3"  aria-hidden="true">Incarceration, fines, and state supervision value punishment over rehabilitation, and harm more than help.</p>
-        <p data-tab="4"  aria-hidden="true">The resolution of a criminal case triggers a second punishment, a series of restrictions and exclusions that prevent reintegration and exacerbate poverty.</p>
+        <div class="cycle__content-item" data-tab="1" aria-hidden="false">
+          <h3 class="cycle__item-title">Targeted</h3>
+          <p>Too many people are arrested for too many crimes, and they’re disproportionately the poor and people of color.</p>
+          <div class="cycle__item-buttons">
+            <button class="cycle__next cycle__button js-tab--next" data-controls-tab="2">Processed</button>
+          </div>
+        </div>
+        <div class="cycle__content-item" data-tab="2" aria-hidden="true">
+          <h3 class="cycle__item-title">Processed</h3>
+          <p>Once in the system, various forces lead overwhelmingly to convictions and excessive punishments.</p>
+          <div class="cycle__item-buttons">
+            <button class="cycle__prev cycle__button js-tab--prev" data-controls-tab="1">Targeted</button>
+            <button class="cycle__next cycle__button js-tab--next" data-controls-tab="3">Punished</button>
+          </div>
+        </div>
+        <div class="cycle__content-item" data-tab="3" aria-hidden="true">
+          <h3 class="cycle__item-title">Punished</h3>
+          <p>Incarceration, fines, and state supervision value punishment over rehabilitation, and harm more than help.</p>
+          <div class="cycle__item-buttons">
+            <button class="cycle__prev cycle__button js-tab--prev" data-controls-tab="2">Processed</button>
+            <button class="cycle__next cycle__button js-tab--next" data-controls-tab="4">Trapped</button>
+          </div>
+        </div>
+        <div class="cycle__content-item" data-tab="4" aria-hidden="true">
+          <h3 class="cycle__item-title">Trapped</h3>
+          <p>The resolution of a criminal case triggers a second punishment, a series of restrictions and exclusions that prevent reintegration and exacerbate poverty.</p>
+          <div class="cycle__item-buttons">
+            <button class="cycle__prev cycle__button js-tab--prev" data-controls-tab="3">Punished</button>
+            <button class="cycle__next cycle__button js-tab--next" data-controls-tab="5">The Full Cycle</button>
+          </div>
+        </div>
+        <div class="cycle__content-item" data-tab="5" aria-hidden="true">
+          <h3 class="cycle__item-title">The Justice Trap</h3>
+          <div class="cycle__item-buttons">
+            <button class="cycle__prev cycle__button js-tab--prev" data-controls-tab="4">Trapped</button>
+            <a class="cycle__next-section cycle__button js-tab--end js-scroll-link" href="#the-stories">See the stories</a>
+          </div>
+        </div>
       </div>
     </div>
     <div class="cycle__graphic">
-      <div data-tab="1" class="cycle__stage" aria-hidden="false">
-        <img src="assets/img/cycle-text-01.svg" width="100%" alt="Justice Trap cycle stage 1: poverty to arrest">
-      </div>
-      <div data-tab="2" class="cycle__stage" aria-hidden="true">
-        <img src="assets/img/cycle-text-02.svg" width="100%" alt="Justice Trap cycle stage 2: arrest to convicted">
-      </div>
-      <div data-tab="3" class="cycle__stage" aria-hidden="true">
-        <img src="assets/img/cycle-text-03.svg" width="100%" alt="Justice Trap cycle stage 3: convicted to reentry">
-      </div>
-      <div data-tab="4" class="cycle__stage" aria-hidden="true">
-        <img src="assets/img/cycle-text-04.svg" width="100%" alt="Justice Trap cycle stage 4: reentry to poverty">
-      </div>
+      {% include cycle.html %}
     </div>
   </div>
 </div>
