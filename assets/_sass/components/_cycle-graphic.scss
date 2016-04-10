@@ -59,24 +59,14 @@
     @include animation-delay(2s);
     @include animation-fill-mode(backwards);
   }
+}
 
-  .cycle[data-scene="1"] {
-    #graphic {
-      @include transition(transform, 1.5s);
-      @include transform(rotate(0));
-      @include transform-origin(50% 50%);
-    }
+#cycle-content {
+  left: -1000%;
+}
 
-    .cycle__content {
-      @include transition(left 1.5s);
-      left: 0;
-    }
-
-    .cycle__graphic {
-      @include transition(right 1.5s);
-      right: 0;
-    }
-  }
+#cycle-graphic {
+  right: -1000%;
 }
 
 .cycle {
@@ -84,20 +74,6 @@
 
   // Targeted
   &[data-scene="1"] {
-    #graphic {
-      @include transition(transform, 1.5s);
-      @include transform(rotate(90deg));
-      @include transform-origin(50% 50%);
-    }
-
-    .cycle__content {
-      left: -1000%;
-    }
-
-    .cycle__graphic {
-      right: -1000%;
-    }
-
     #label-targeted,
     #quad-1-nodes {
       opacity: 1;
@@ -234,7 +210,7 @@
     #quad-4-nodes {
       @include transition(opacity 1s);
       @include animation(fadeOut 2s);
-      @include animation-delay(5s);
+      @include animation-delay(2s);
       @include animation-fill-mode(forwards);
       opacity: 1;
     }
@@ -245,8 +221,14 @@
     #quad-4-arc {
       @include transition(stroke 1s);
       @include animation(fadeToBlack 2s);
-      @include animation-delay(5s);
+      @include animation-delay(2s);
       @include animation-fill-mode(forwards);
+    }
+
+    #nodes path,
+    #lines path {
+      // @include transition(stroke 1s);
+      stroke: $black;
     }
 
     #quad-1-arc {
@@ -263,13 +245,6 @@
 
     #quad-4-arc {
       stroke: $red;
-    }
-
-    #nodes,
-    #lines path {
-      @include animation(fadeInStroke 2s);
-      @include animation-delay(5s);
-      @include animation-fill-mode(forwards);
     }
   }
 }

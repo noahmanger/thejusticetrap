@@ -67,25 +67,25 @@
 .cycle__prev {
   background-image: url('../img/arrow-left.svg');
   background-repeat: no-repeat;
-  background-position: 10% 50%;
+  background-position: 5% 50%;
   float: left;
-  padding: 1rem 1rem 1rem 3.5rem;
+  padding: 1rem .5rem 1rem 3rem;
 }
 
 .cycle__next {
   background-image: url('../img/arrow-right.svg');
   background-repeat: no-repeat;
-  background-position: 90% 50%;
+  background-position: 95% 50%;
   float: right;
-  padding: 1rem 3.5rem 1rem 1rem;
+  padding: 1rem 3rem 1rem .5rem;
 }
 
 .cycle__next-section {
   background-image: url('../img/arrow-down.svg');
   background-repeat: no-repeat;
-  background-position: 90% 50%;
+  background-position: 95% 50%;
   float: right;
-  padding: 1rem 3.5rem 1rem 1rem;
+  padding: 1rem 3rem 1rem .5rem;
 
   &:active,
   &:hover {
@@ -98,6 +98,7 @@
   background-color: transparent;
   border: 2px solid transparent;
   color: $black;
+  font-size: 1.4rem;
   font-weight: normal;
 
   &:focus {

@@ -128,6 +128,23 @@ var initScrollTracking = function() {
     scenes.push(scene);
   });
 
+  // Cycle animation scene
+  var cycleSceneFactory = function(id, tweenProps) {
+    var scene = new ScrollMagic.Scene({
+      triggerElement: '#cycle',
+      duration: 200,
+      triggerHook: .3
+    });
+    var tween = new TweenMax.to(id, 1, tweenProps);
+    scene.setTween(tween);
+    return scene;
+  };
+  var contentScene = cycleSceneFactory('#cycle-content', {left: 0});
+  var graphicScene = cycleSceneFactory('#cycle-graphic', {right: 0});
+
+  scenes.push(contentScene);
+  scenes.push(graphicScene);
+
   // Animate scroll
   $('.js-scroll-link').on('click', function(e){
     e.preventDefault();
