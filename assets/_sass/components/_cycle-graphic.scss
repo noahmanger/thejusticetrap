@@ -6,6 +6,20 @@
   position: relative;
 }
 
+.cycle__graphic {
+  padding: 2rem 0;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  @include media($large-screen-up) {
+    padding: 0;
+  }
+}
+
 #graphic {
   path {
     @include transition(all, .2s);

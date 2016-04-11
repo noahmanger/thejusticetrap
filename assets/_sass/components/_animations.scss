@@ -24,6 +24,16 @@
   }
 }
 
+@include keyframes(slideRight) {
+  from {
+    left: 0;
+  }
+
+  to {
+    left: 1000%;
+  }
+}
+
 @include keyframes(fadeIn) {
   from {
     opacity: 0;
