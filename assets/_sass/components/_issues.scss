@@ -7,11 +7,11 @@
     padding-bottom: 1rem;
   }
 
-  
+
   @include media($large-screen-up) {
     background-position: -4rem -10rem;
   }
-  
+
   @include media($medium-screen-up) {
     background-size: 50%;
     background-position: -4rem 20%;
