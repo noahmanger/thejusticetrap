@@ -1,40 +1,139 @@
-.cycle {
-  @include clearfix();
-}
+@import 'animations';
 
 .cycle__content {
-  p[aria-hidden="true"] {
-    display: none;
+  position: relative;
+  height: 250px;
+
+  @include media($large-screen-up) {
+    height: 300px;
+  }
+}
+
+.cycle__content-item {
+  position: absolute;
+  bottom: 0;
+  padding: 2rem 0;
+  width: 100%;
+
+  &[data-tab][aria-hidden="true"] {
+    @include animation(slideRight 3s);
+    // @include animation-fill-mode(forward);
+    display: block !important;
+    left: -1000%;
+  }
+
+  &[aria-hidden="false"] {
+    @include transition(left, 1s);
+    left: 0;
+  }
+
+  p {
+    font-size: 1.6rem;
+  }
+
+  &[data-tab="1"] {
+    .cycle__item-title {
+      border-color: $orange;
+    }
+  }
+
+  &[data-tab="2"] {
+    .cycle__item-title {
+      border-color: $yellow;
+    }
+  }
+
+  &[data-tab="3"] {
+    .cycle__item-title {
+      border-color: $purple;
+    }
+  }
+
+  &[data-tab="4"] {
+    .cycle__item-title {
+      border-color: $red;
+    }
+  }
+
+  @include media($large-screen-up) {
+    padding: 10rem 0;
+
+    &[data-tab][aria-hidden="true"] {
+      @include animation(dropAndSlide 3s);
+      @include animation-fill-mode(forward);
+      display: block !important;
+      left: -1000%;
+    }
+
+    &[aria-hidden="false"] {
+      @include transition(left, 1s);
+      left: 0;
+    }
+  }
+}
+
+.cycle__item-title {
+  border: 1px solid;
+  display: inline-block;
+  padding: 1rem;
+}
+
+.cycle__item-buttons {
+  @include clearfix();
+  border-top: 1px solid $black;
+  padding-top: 1rem;
+}
+
+.cycle__prev {
+  background-image: url('../img/arrow-left.svg');
+  background-repeat: no-repeat;
+  background-position: 5% 50%;
+  float: left;
+  padding: 1rem .5rem 1rem 3rem;
+}
+
+.cycle__next {
+  background-image: url('../img/arrow-right.svg');
+  background-repeat: no-repeat;
+  background-position: 95% 50%;
+  float: right;
+  padding: 1rem 3rem 1rem .5rem;
+}
+
+.cycle__next-section {
+  background-image: url('../img/arrow-down.svg');
+  background-repeat: no-repeat;
+  background-position: 95% 50%;
+  float: right;
+  padding: 1rem 3rem 1rem .5rem;
+
+  &:active,
+  &:hover {
+    border-color: $black;
   }
 }
 
 .cycle__button {
   @include transition(all .2s);
-  background: none;
-  border: 1px solid transparent;
-  color: $light-gray;
-  padding: 1rem;
+  background-color: transparent;
+  border: 2px solid transparent;
+  color: $black;
+  font-size: 1.2rem;
   font-weight: normal;
 
-  &.active,
-  &:active,
-  &:hover {
-    background: none;
-    color: $black;
-  }
-
   &:focus {
-    background: none;
+    background-color: transparent;
     color: $black;
   }
 
-  &:hover {
-    background: none;
+  &:hover,
+  &:active {
     color: $black;
+    background-color: transparent;
+    outline: none;
   }
 
   &[data-controls-tab="1"] {
-    &.active,
     &:active,
     &:hover {
       border-color: $orange;
@@ -42,7 +141,6 @@
   }
 
   &[data-controls-tab="2"] {
-    &.active,
     &:active,
     &:hover {
       border-color: $yellow;
@@ -50,7 +148,6 @@
   }
 
   &[data-controls-tab="3"] {
-    &.active,
     &:active,
     &:hover {
       border-color: $purple;
@@ -58,22 +155,18 @@
   }
 
   &[data-controls-tab="4"] {
-    &.active,
     &:active,
     &:hover {
       border-color: $red;
     }
   }
-}
 
-.cycle__graphic {
-  position: relative;
-}
-
-.cycle__stage {
-  @include transition(opacity .4s);
-  top: 0;
-  right: 0;
+  &[data-controls-tab="5"] {
+    &:active,
+    &:hover {
+      border-color: $black;
+    }
+  }
 }
 
 @include media($large-screen-up) {
@@ -82,11 +175,11 @@
   }
 
   .cycle__controls {
-    @include span-columns(6);
+    @include span-columns(4);
     padding-top: 4rem;
   }
 
   .cycle__graphic {
-    @include span-columns(6);
+    @include span-columns(8);
   }
 }

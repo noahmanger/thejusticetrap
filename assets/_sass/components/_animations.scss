@@ -1,0 +1,75 @@
+@include keyframes(dropAndSlide) {
+  0% {
+    opacity: 1;
+    left: 0;
+    top: 0;
+  }
+
+  30% {
+    opacity: 0;
+    left: 0;
+    top: 200%;
+  }
+
+  90% {
+    opacity: 0;
+    left: 0;
+    top: 200%;
+  }
+
+  100% {
+    left: -1000%;
+    top: 0;
+    opacity: 0;
+  }
+}
+
+@include keyframes(slideRight) {
+  from {
+    left: 0;
+  }
+
+  to {
+    left: 1000%;
+  }
+}
+
+@include keyframes(fadeIn) {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@include keyframes(fadeOut) {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@include keyframes(fadeInStroke) {
+  from {
+    stroke: rgba(0,0,0,0);
+  }
+
+  to {
+    stroke: rgba(0,0,0,1);
+  }
+}
+
+@include keyframes(fadeToBlack) {
+  from {
+    stroke: rgba($orange, 1);
+  }
+
+  to {
+    stroke: rgba(0,0,0,1);
+  }
+}

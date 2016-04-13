@@ -3,10 +3,13 @@
 }
 
 .tab-nav {
-  @include clearfix();
-  padding: 1rem 0;
+  display: table;
+  width: 100%;
 
   @include media($large-screen-up) {
+    display: block;
+    width: auto;
+
     button {
       font-size: 1.8rem;
     }
@@ -14,6 +17,9 @@
 }
 
 .tab-nav__item {
-  float: left;
-  margin-right: 2px;
+  display: table-cell;
+
+  @include media($large-screen-up) {
+    display: block;
+  }
 }

@@ -1,0 +1,264 @@
+@import 'animations';
+
+// Base styles
+.cycle__graphic,
+.cycle__content {
+  position: relative;
+}
+
+.cycle__graphic {
+  padding: 2rem 0;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  @include media($large-screen-up) {
+    padding: 0;
+  }
+}
+
+#graphic {
+  path {
+    @include transition(all, .2s);
+  }
+}
+
+#point-labels {
+  opacity: 0;
+}
+
+#label-targeted,
+#label-processed,
+#label-punished,
+#label-trapped {
+  @include transition(all, .4s);
+  opacity: 0;
+}
+
+#quad-1-nodes,
+#quad-2-nodes,
+#quad-3-nodes,
+#quad-4-nodes {
+  @include transition(all, .4s);
+  opacity: 0;
+}
+
+.cycle__quad-fill {
+  @include transition(opacity, .2s);
+  opacity: 0;
+  cursor: pointer;
+
+  &:hover {
+    opacity: .2;
+  }
+}
+
+.cycle__quad-arc {
+  stroke: $light-gray;
+}
+
+// Intro animation
+.visible {
+  #point-labels {
+    @include animation(fadeIn 1.5s);
+    @include animation-delay(2s);
+    @include animation-fill-mode(both);
+  }
+
+  #label-targeted {
+    @include animation(fadeIn 1.5s);
+    @include animation-delay(2s);
+    @include animation-fill-mode(backwards);
+  }
+}
+
+#cycle-content {
+  left: -1000%;
+}
+
+#cycle-graphic {
+  right: -1000%;
+}
+
+.cycle {
+  @include clearfix();
+
+  // Targeted
+  &[data-scene="1"] {
+    #label-targeted,
+    #quad-1-nodes {
+      opacity: 1;
+    }
+
+    #quad-1-arc {
+      stroke: $orange;
+    }
+
+    #quad-1-fill {
+      opacity: 1;
+    }
+
+    #label-poverty,
+    #label-arrest {
+      path {
+        fill: $black;
+      }
+    }
+
+    #node-1,
+    #node-2 {
+      stroke: $orange;
+    }
+  }
+
+  // Processed
+  &[data-scene="2"] {
+    #quad-2-nodes {
+      opacity: 1;
+    }
+
+    #quad-2-arc {
+      stroke: $yellow;
+    }
+
+    #label-processed {
+      opacity: 1;
+    }
+
+    #quad-2-fill {
+      opacity: 1;
+    }
+
+    #label-arrest,
+    #label-conviction {
+      path {
+        fill: $black;
+      }
+    }
+
+    #node-2,
+    #node-3 {
+      stroke: $yellow;
+    }
+  }
+
+  // Punished
+  &[data-scene="3"] {
+    #quad-3-nodes {
+      opacity: 1;
+    }
+
+    #quad-3-arc {
+      stroke: $purple;
+    }
+
+    #label-punished {
+      opacity: 1;
+    }
+
+    #quad-3-fill {
+      opacity: 1;
+    }
+
+    #label-conviction,
+    #label-reentry {
+      path {
+        fill: $black;
+      }
+    }
+
+    #node-3,
+    #node-4 {
+      stroke: $purple;
+    }
+  }
+
+  // Trapped
+  &[data-scene="4"] {
+    #quad-4-nodes {
+      opacity: 1;
+    }
+
+    #quad-4-arc {
+      stroke: $red;
+    }
+
+    #label-trapped {
+      opacity: 1;
+    }
+
+    #quad-4-fill {
+      opacity: 1;
+    }
+
+    #label-reentry,
+    #label-poverty {
+      path {
+        fill: $black;
+      }
+    }
+
+    #node-4,
+    #node-1 {
+      stroke: $red;
+    }
+  }
+
+  // Full cycle
+  &[data-scene="5"] {
+    #point-labels,
+    #label-targeted,
+    #label-processed,
+    #label-punished,
+    #label-trapped,
+    #quad-1-fill,
+    #quad-2-fill,
+    #quad-3-fill,
+    #quad-4-fill,
+    #quad-1-nodes,
+    #quad-2-nodes,
+    #quad-3-nodes,
+    #quad-4-nodes {
+      @include transition(opacity 1s);
+      @include animation(fadeOut 2s);
+      @include animation-delay(2s);
+      @include animation-fill-mode(forwards);
+      opacity: 1;
+    }
+
+    #quad-1-arc,
+    #quad-2-arc,
+    #quad-3-arc,
+    #quad-4-arc {
+      @include transition(stroke 1s);
+      @include animation(fadeToBlack 2s);
+      @include animation-delay(2s);
+      @include animation-fill-mode(forwards);
+    }
+
+    #nodes path,
+    #lines path {
+      // @include transition(stroke 1s);
+      stroke: $black;
+    }
+
+    #quad-1-arc {
+      stroke: $orange;
+    }
+
+    #quad-2-arc {
+      stroke: $yellow;
+    }
+
+    #quad-3-arc {
+      stroke: $purple;
+    }
+
+    #quad-4-arc {
+      stroke: $red;
+    }
+  }
+}

@@ -10,12 +10,12 @@
   }
 
   .seg--up {
-    border-right: 2px;
-    width: 3px;
+    border-width: 1px;
+    width: 2px;
   }
 
   .seg--horizontal {
-    border-bottom: 2px;
+    border-width: 1px;
   }
 }
 
@@ -58,7 +58,7 @@
 
 .connector--3 {
   right: 0;
-  top: 15rem;
+  top: 21rem;
 
   .seg--1 {
     right: 5%;
