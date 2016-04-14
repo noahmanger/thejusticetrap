@@ -9,11 +9,11 @@
 
   @include media($medium-screen-up) {
     background-size: 50%;
-    background-position: -4rem 20%;
+    background-position: -4rem 38%;
   }
 
   @include media($large-screen-up) {
-    background-position: -4rem -10rem;
+    background-position: -4rem -8rem;
   }
 }
 
@@ -172,5 +172,9 @@
   .action__bottom {
     position: relative;
     top: -5rem;
+  }
+
+  .action__4 {
+    margin-top: 5rem;
   }
 }

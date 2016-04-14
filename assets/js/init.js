@@ -132,7 +132,7 @@ var initScrollTracking = function() {
   var cycleSceneFactory = function(id, tweenProps) {
     var scene = new ScrollMagic.Scene({
       triggerElement: '#cycle',
-      duration: 200,
+      duration: 100,
       triggerHook: .3
     });
     var tween = new TweenMax.to(id, 1, tweenProps);

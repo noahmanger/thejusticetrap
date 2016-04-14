@@ -41,7 +41,7 @@
 }
 
 .connector--2 {
-  top: 16rem;
+  top: 20rem;
 
   .seg--1 {
     top: 0;
@@ -62,31 +62,31 @@
 
   .seg--1 {
     right: 5%;
-    height: 6rem;
+    height: 2rem;
   }
 
   .seg--2 {
-    top: 6rem;
+    top: 2rem;
     right: 5%;
-    width: 40%;
+    width: 50%;
   }
 }
 
 .connector--4 {
-  top: -10rem;
+  top: -9rem;
 
   .seg--1 {
-    height: 8rem;
+    height: 9rem;
   }
 
   .seg--2 {
-    width: 35%
+    width: 58%
   }
 }
 
 .connector--5 {
   right: 0;
-  top: -4rem;
+  top: -2rem;
 
   .seg--1 {
     height: 6rem;
@@ -122,7 +122,7 @@
   }
 
   .connector--2 {
-    top: 10rem;
+    top: 15rem;
 
     .seg--1 {
       right: 5%;
@@ -139,7 +139,12 @@
   }
 
   .connector--3 {
+    .seg--1 {
+      height: 4rem;
+    }
+
     .seg--2 {
+      top: 4rem;
       width: 65%;
     }
   }
@@ -200,6 +205,8 @@
   }
 
   .connector--5 {
+    top: 2rem;
+
     .seg--1 {
 
     }

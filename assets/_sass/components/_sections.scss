@@ -19,10 +19,6 @@
   position: relative;
   z-index: 100;
 
-  @include media($medium-screen-up) {
-    padding: 2rem;
-  }
-  
   @include media($xl-screen-up) {
     padding: 2rem 0;
   }

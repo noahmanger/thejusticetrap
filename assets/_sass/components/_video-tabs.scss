@@ -76,7 +76,7 @@
   padding: 2rem 1rem 1rem 1rem;
 
   @include media($medium-screen-up) {
-    padding: 0;
+    padding: 2rem;
     width: 80%;
   }
 }
@@ -113,7 +113,7 @@
   font-size: 1.2rem;
   font-weight: normal;
   white-space: pre-line;
-  
+
   &.active,
   &.active:focus,
   &:active:hover:not(.is-disabled),
@@ -138,21 +138,23 @@
 }
 
 .cycle-heading {
+  background-size: contain;
+  background-repeat: no-repeat;
   padding-left: 5rem;
   line-height: 2;
   margin-bottom: .5rem;
 }
 
 .cycle--processed-trapped {
-  background: url('../img/cycle-icon-processed-trapped.svg') no-repeat;
+  background-image: url('../img/cycle-icon-processed-trapped.svg');
 }
 
 .cycle--processed {
-  background: url('../img/cycle-icon-processed.svg') no-repeat;
+  background-image: url('../img/cycle-icon-processed.svg');
 }
 
 .cycle--targeted-processed {
-  background: url('../img/cycle-icon-targeted-processed.svg') no-repeat;
+  background-image: url('../img/cycle-icon-targeted-processed.svg');
 }
 
 @include media($large-screen-up) {
