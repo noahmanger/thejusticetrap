@@ -2,7 +2,7 @@ $(document).ready(function() {
 
   ////////////////////////////////////
   // Password
-  // Delete line 6 - line 14 to remove the password
+  // Delete line 3 - line 15 to remove the password
   function getPassword() {
     var password = prompt('Please enter the password to view The Justice Trap');
     if (password === 'fixthesystem') {
