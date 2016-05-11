@@ -15,7 +15,7 @@ First, you will need to install Jekyll. [Follow these instructions to install it
 Once you have Jekyll installed, clone this repo to your computer and from the project directory, run:
 
 ```
-jekyl serve
+jekyll serve
 ```
 
 ### Branching
