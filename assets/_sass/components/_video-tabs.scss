@@ -157,6 +157,10 @@
   background-image: url('../img/cycle-icon-targeted-processed.svg');
 }
 
+.cycle--trapped {
+  background-image: url('../img/cycle-icon-trapped.svg');
+}
+
 @include media($large-screen-up) {
   .video-tabs__content {
     @include span-columns(8);
