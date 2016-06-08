@@ -95,7 +95,7 @@
   }
 
   &:after {
-    @include triangle(.8rem 1rem, $white, right);
+    @include triangle(.8rem .8rem, $white, right);
     content: '';
     position: absolute;
     right: 1.5rem;
