@@ -95,7 +95,7 @@
   }
 
   &:after {
-    @include triangle(.8rem 1rem, $white, right);
+    @include triangle(.8rem .8rem, $white, right);
     content: '';
     position: absolute;
     right: 1.5rem;
@@ -155,6 +155,10 @@
 
 .cycle--targeted-processed {
   background-image: url('../img/cycle-icon-targeted-processed.svg');
+}
+
+.cycle--trapped {
+  background-image: url('../img/cycle-icon-trapped.svg');
 }
 
 @include media($large-screen-up) {
